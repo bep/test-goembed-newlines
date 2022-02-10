@@ -6,10 +6,11 @@ import (
 	qt "github.com/frankban/quicktest"
 )
 
-func TestFoo(t *testing.T) {
+func TestEmbed(t *testing.T) {
 	t.Parallel()
 
 	c := qt.New(t)
 
-	c.Assert(true, qt.IsTrue)
+	c.Assert(embedHello, qt.Equals, "\nHello.\n")
+	c.Assert(embedHello, qt.Equals, fileHello())
 }

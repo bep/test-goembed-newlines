@@ -1,4 +1,4 @@
-module github.com/bep/go-main-template
+module github.com/bep/test-goembed-newlines
 
 go 1.17
 
