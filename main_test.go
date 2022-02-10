@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strings"
 	"testing"
 
 	qt "github.com/frankban/quicktest"
@@ -12,5 +13,6 @@ func TestEmbed(t *testing.T) {
 	c := qt.New(t)
 
 	c.Assert(embedHello, qt.Equals, fileHello())
-	// c.Assert(embedHello, qt.Equals, "\nHello.\n")
+
+	c.Assert(strings.ReplaceAll(embedHello, "\r\n", "\n"), qt.Equals, "\nHello.\n")
 }
